@@ -18,7 +18,7 @@ module Macedoine
       end
 
       def create_migration_file
-        migration_template 'migration.rb', 'db/migrate/macedoine_migration.rb'
+        migration_template 'migration.rb', 'db/migrate/add_macedoine.rb'
       end
 
       def create_model_file

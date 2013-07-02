@@ -1,4 +1,4 @@
-class AddEmotions < ActiveRecord::Migration
+class AddMacedoine < ActiveRecord::Migration
   def up
     create_table :memberships do |t|
       t.references :user
