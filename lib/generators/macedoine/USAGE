@@ -1,0 +1,4 @@
+Description:
+  The macedoine:install generator generates a migration that will
+  create the `memberships` table in your database. It will also
+  create a blank `Membership` model file.
