@@ -1,0 +1,24 @@
+module Macedoine
+  module Membership
+    extend ActiveSupport::Concern
+    included do
+      # Associations
+      belongs_to :user, validate: true
+      belongs_to :organization
+
+      # Validations
+      validates :user, presence: true
+      validates :organization, presence: true
+      validates :membership_type, presence: true, inclusion: { in: Macedoine.membership_types }, uniqueness: { scope: [:user_id, :organization_id] }
+
+      # Scopes
+      Macedoine.membership_types.each do |type|
+        scope type.pluralize, lambda { where(membership_type: type) }
+      end
+
+      # Nested attributes
+      accepts_nested_attributes_for :user
+      accepts_nested_attributes_for :organization
+    end
+  end
+end
