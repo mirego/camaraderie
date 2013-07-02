@@ -26,15 +26,19 @@ Macedoine.configure do |config|
 end
 ```
 
-Then, you can include the two provided modules into your `User` and `Organization` model:
+Then, you can include the two provided modules into your `User`, `Organization` and `Membership` models:
 
 ```ruby
 class User < ActiveRecord::Base
-  include Macedoine::User
+  acts_as_user
 end
 
 class Organization < ActiveRecord::Base
-  include Macedoine::Organization
+  acts_as_organization
+end
+
+class Membership < ActiveRecord::Base
+  acts_as_membership
 end
 ```
 
