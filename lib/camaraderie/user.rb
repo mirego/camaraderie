@@ -1,4 +1,4 @@
-module Macedoine
+module Camaraderie
   module User
     extend ActiveSupport::Concern
 
@@ -7,7 +7,7 @@ module Macedoine
       has_many :memberships, dependent: :destroy
       has_many :organizations, through: :memberships
 
-      Macedoine.membership_types.each do |type|
+      Camaraderie.membership_types.each do |type|
         class_eval <<-RUBY, __FILE__, __LINE__ + 1
           def #{type}_of?(organization)
             !!memberships.admins.where(organization: organization).exists?

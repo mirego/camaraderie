@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'macedoine/version'
+require 'camaraderie/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'macedoine'
-  spec.version       = Macedoine::VERSION
+  spec.name          = 'camaraderie'
+  spec.version       = Camaraderie::VERSION
   spec.authors       = ['Rémi Prévost']
   spec.email         = ['rprevost@mirego.com']
-  spec.description   = 'Macedoine takes away the pain of managing membership stuff between users and organizations.'
-  spec.summary       = 'Macedoine takes away the pain of managing membership stuff between users and organizations.'
-  spec.homepage      = 'https://github.com/mirego/macedoine'
-  spec.license       = 'MSD 3-Clause'
+  spec.description   = 'Camaraderie takes away the pain of managing membership stuff between users and organizations.'
+  spec.summary       = 'Camaraderie takes away the pain of managing membership stuff between users and organizations.'
+  spec.homepage      = 'https://github.com/mirego/camaraderie'
+  spec.license       = 'BSD 3-Clause'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

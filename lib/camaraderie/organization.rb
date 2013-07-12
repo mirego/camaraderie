@@ -1,4 +1,4 @@
-module Macedoine
+module Camaraderie
   module Organization
     extend ActiveSupport::Concern
 
@@ -12,7 +12,7 @@ module Macedoine
       # @example
       #   user = User.new(email: 'foo@example.com')
       #   Organization.first.admins.create(user: user)
-      Macedoine.membership_types.each do |type|
+      Camaraderie.membership_types.each do |type|
         class_eval <<-RUBY, __FILE__, __LINE__ + 1
           def #{type.pluralize}
             memberships.#{type.pluralize}

@@ -1,10 +1,10 @@
-require "macedoine/version"
+require 'camaraderie/version'
 
-require "macedoine/user"
-require "macedoine/organization"
-require "macedoine/membership"
+require 'camaraderie/user'
+require 'camaraderie/organization'
+require 'camaraderie/membership'
 
-module Macedoine
+module Camaraderie
   # Yield a block to edit the @configuration variable
   def self.configure
     @configuration = OpenStruct.new
@@ -20,18 +20,18 @@ module Macedoine
   def self.inject_into_active_record
     @inject_into_active_record ||= Proc.new do
       def self.acts_as_user
-        self.send :include, Macedoine::User
+        self.send :include, Camaraderie::User
       end
 
       def self.acts_as_organization
-        self.send :include, Macedoine::Organization
+        self.send :include, Camaraderie::Organization
       end
 
       def self.acts_as_membership
-        self.send :include, Macedoine::Membership
+        self.send :include, Camaraderie::Membership
       end
     end
   end
 end
 
-require 'macedoine/railtie' if defined?(Rails) && Rails::VERSION::MAJOR >= 3
+require 'camaraderie/railtie' if defined?(Rails) && Rails::VERSION::MAJOR >= 3

@@ -1,27 +1,27 @@
-# Macedoine
+# Camaraderie
 
-Macedoine takes away the pain of managing membership stuff between users and organizations.
+Camaraderie takes away the pain of managing membership stuff between users and organizations.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'macedoine'
+gem 'camaraderie'
 ```
 
 Then run the task to generate the migration:
 
 ```bash
-$ rails generate macedoine:install
+$ rails generate camaraderie:install
 ```
 
 ## Usage
 
-First, you have to configure which type of memberships you want. Usually, you’d do this in `./config/initializers/macedoine.rb`:
+First, you have to configure which type of memberships you want. Usually, you’d do this in `./config/initializers/camaraderie.rb`:
 
 ```ruby
-Macedoine.configure do |config|
+Camaraderie.configure do |config|
   config.membership_types = %w(admin moderator member)
 end
 ```
@@ -61,7 +61,7 @@ user.admin_of?(organization)
 
 ## License
 
-`Macedoine` is © 2013 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/macedoine/blob/master/LICENSE.md) file.
+`Camaraderie` is © 2013 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/camaraderie/blob/master/LICENSE.md) file.
 
 ## About Mirego
 

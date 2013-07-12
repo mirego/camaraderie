@@ -1,4 +1,4 @@
-module Macedoine
+module Camaraderie
   module Membership
     extend ActiveSupport::Concern
     included do
@@ -9,10 +9,10 @@ module Macedoine
       # Validations
       validates :user, presence: true
       validates :organization, presence: true
-      validates :membership_type, presence: true, inclusion: { in: Macedoine.membership_types }, uniqueness: { scope: [:user_id, :organization_id] }
+      validates :membership_type, presence: true, inclusion: { in: Camaraderie.membership_types }, uniqueness: { scope: [:user_id, :organization_id] }
 
       # Scopes
-      Macedoine.membership_types.each do |type|
+      Camaraderie.membership_types.each do |type|
         scope type.pluralize, lambda { where(membership_type: type) }
       end
 

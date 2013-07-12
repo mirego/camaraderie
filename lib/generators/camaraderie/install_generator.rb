@@ -1,7 +1,7 @@
 require 'rails/generators'
 require 'rails/generators/migration'
 
-module Macedoine
+module Camaraderie
   module Generators
     class InstallGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
@@ -18,7 +18,7 @@ module Macedoine
       end
 
       def create_migration_file
-        migration_template 'migration.rb', 'db/migrate/add_macedoine.rb'
+        migration_template 'migration.rb', 'db/migrate/add_camaraderie.rb'
       end
 
       def create_model_file
