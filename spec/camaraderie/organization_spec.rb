@@ -53,6 +53,26 @@ describe Camaraderie::Organization do
   end
 
   describe :Associations do
-    pending "Let's add some tests for Camaraderie::Organization associations here."
+    let(:organization) { Organization.create }
+    let(:user1) { User.create }
+    let(:user2) { User.create }
+    let(:user3) { User.create }
+
+    before do
+      organization.admins.create(user: user1)
+      organization.members.create(user: user2)
+      organization.members.create(user: user3)
+    end
+
+    describe :users do
+      subject { organization.users }
+      it { should have(3).items }
+
+      describe :DestroyDependent do
+        specify do
+          expect { organization.destroy }.to change { Membership.count }.from(3).to(0)
+        end
+      end
+    end
   end
 end
