@@ -5,7 +5,7 @@ module Camaraderie
     included do
       # Associations
       has_many :memberships, dependent: :destroy
-      has_many :users, through: :memberships
+      has_many :users, through: :memberships, class_name: Camaraderie.user_class
 
       # Define a method for each type of membership
       #

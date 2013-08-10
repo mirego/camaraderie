@@ -13,7 +13,17 @@ module Camaraderie
 
   # Return the allowed membership types
   def self.membership_types
-    @configuration.membership_types
+    @configuration.membership_types.try(:map, &:to_s) || %w(member)
+  end
+
+  # Return the class name to use for the organizations association
+  def self.organization_class
+    @configuration.organization_class.try(:to_s) || 'Organization'
+  end
+
+  # Return the class name to use for the users association
+  def self.user_class
+    @configuration.user_class.try(:to_s) || 'User'
   end
 
   # Return a block that can be injected into a class
