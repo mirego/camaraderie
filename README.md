@@ -24,7 +24,14 @@ First, you have to configure which type of memberships you want. Usually, you’
 
 ```ruby
 Camaraderie.configure do |config|
+  # The different types of memberships (defaults to `['admin']`)
   config.membership_types = %w(admin moderator member)
+
+  # The class name of the organization model (defaults to `'Organization'`)
+  config.organization_class = 'Company'
+
+  # The class name of the user model (defaults to `'User'`)
+  config.user_class = 'Employee'
 end
 ```
 
