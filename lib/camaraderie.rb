@@ -1,5 +1,8 @@
 require 'camaraderie/version'
 
+require 'active_support'
+require 'active_record'
+
 require 'camaraderie/user'
 require 'camaraderie/organization'
 require 'camaraderie/membership'
