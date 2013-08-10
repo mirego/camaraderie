@@ -15,6 +15,7 @@ RSpec.configure do |config|
   # Include our macros
   config.include DatabaseMacros
   config.include ModelMacros
+  config.include RailsMacros
 
   config.before(:each) do
     # Create the SQLite database
@@ -22,11 +23,6 @@ RSpec.configure do |config|
 
     # Run our migration
     run_default_migration
-
-    # Create the Membership model
-    spawn_model 'Membership', ActiveRecord::Base do
-      acts_as_membership
-    end
   end
 
   config.after(:each) do

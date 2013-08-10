@@ -1,17 +1,24 @@
 module ModelMacros
-  # Create a new emotional model
-  def organization(klass_name, &block)
+  # Create a new organization model
+  def spawn_organization_model(klass_name = 'Organization', &block)
     spawn_model klass_name, ActiveRecord::Base do
       acts_as_organization
       instance_exec(&block) if block
     end
   end
 
-  # Create a new emotive model
-  def user(klass_name, &block)
+  # Create a new user model
+  def spawn_user_model(klass_name = 'User', &block)
     spawn_model klass_name, ActiveRecord::Base do
       acts_as_user
-      class_eval(&block) if block
+      instance_exec(&block) if block
+    end
+  end
+
+  def spawn_membership_model(klass_name = 'Membership', &block)
+    spawn_model 'Membership', ActiveRecord::Base do
+      acts_as_membership
+      instance_exec(&block) if block
     end
   end
 

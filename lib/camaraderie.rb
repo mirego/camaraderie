@@ -2,6 +2,7 @@ require 'camaraderie/version'
 
 require 'active_support'
 require 'active_record'
+require 'ostruct'
 
 require 'camaraderie/user'
 require 'camaraderie/organization'

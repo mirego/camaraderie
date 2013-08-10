@@ -34,6 +34,6 @@ module DatabaseMacros
   # Run the built-in migration
   def run_default_migration
     load File.expand_path('../../../../lib/generators/camaraderie/templates/migration.rb', __FILE__)
-    AddFollowsMigration.new.up
+    AddCamaraderie.new.up
   end
 end
