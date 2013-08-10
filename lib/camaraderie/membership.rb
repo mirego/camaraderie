@@ -3,8 +3,8 @@ module Camaraderie
     extend ActiveSupport::Concern
     included do
       # Associations
-      belongs_to :user, validate: true
-      belongs_to :organization
+      belongs_to :user, validate: true, class_name: Camaraderie.user_class
+      belongs_to :organization, class_name: Camaraderie.organization_class
 
       # Validations
       validates :user, presence: true
