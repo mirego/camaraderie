@@ -23,10 +23,19 @@ RSpec.configure do |config|
 
     # Run our migration
     run_default_migration
+
+    # Reset Camaraderie.configuration
+    Camaraderie.instance_variable_set(:@configuration, nil)
+
+    # Prepare our models array
+    @spawned_models = []
   end
 
   config.after(:each) do
     # Make sure we remove our test database file
     cleanup_database
+
+    # Remove our models
+    @spawned_models.each { |model| Object.instance_eval { remove_const model.name.to_sym } }
   end
 end
