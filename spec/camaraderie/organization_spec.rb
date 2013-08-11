@@ -13,7 +13,7 @@ describe Camaraderie::Organization do
     end
   end
 
-  describe :ClassMethods do
+  describe :InstanceMethods do
     let(:organization) { Organization.create }
     let(:user1) { User.create }
     let(:user2) { User.create }
