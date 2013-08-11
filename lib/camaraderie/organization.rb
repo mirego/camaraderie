@@ -4,8 +4,8 @@ module Camaraderie
 
     included do
       # Associations
-      has_many :memberships, dependent: :destroy
-      has_many :users, through: :memberships, class_name: Camaraderie.user_class
+      has_many :memberships, dependent: :destroy, foreign_key: :organization_id, class_name: 'Membership', inverse_of: :organization
+      has_many :users, through: :memberships, class_name: Camaraderie.user_class, inverse_of: :organizations
 
       # Define a method for each type of membership
       #
