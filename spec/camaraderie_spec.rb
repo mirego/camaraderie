@@ -23,6 +23,12 @@ describe Camaraderie do
     let(:organization) { Company.create }
 
     before do
+      # FIXME Why doesn't this work?
+      # It bypasses `class_name: 'Employee'` and tries to use 'User'
+      #
+      # organization.admins.create(user: user)
+
+      # We'll have to use this for now
       Membership.create(membership_type: 'admin', user: user, organization: organization)
     end
 
