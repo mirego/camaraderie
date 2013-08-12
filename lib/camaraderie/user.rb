@@ -10,7 +10,7 @@ module Camaraderie
       Camaraderie.membership_types.each do |type|
         class_eval <<-RUBY, __FILE__, __LINE__ + 1
           def #{type}_of?(organization)
-            !!memberships.#{type.pluralize}.where(organization: organization).exists?
+            !!memberships.#{type.pluralize}.where(organization_id: organization.id).exists?
           end
         RUBY
       end
