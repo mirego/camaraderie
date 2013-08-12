@@ -17,6 +17,10 @@ module Camaraderie
           def #{type.pluralize}
             memberships.#{type.pluralize}
           end
+
+          def #{type}_users
+            Camaraderie.user_class.constantize.where(id: #{type.pluralize}.pluck(:user_id))
+          end
         RUBY
       end
     end

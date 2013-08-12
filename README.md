@@ -66,6 +66,10 @@ organization.members.create(user: user)
 # Check whether the user is an admin
 user.admin_of?(organization)
 # => true
+
+# List all the admins for the organization
+organization.admin_users
+# => #<ActiveRecord::Relation [<User id=1>]>
 ```
 
 ## License
