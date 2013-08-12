@@ -1,6 +1,7 @@
 # Camaraderie
 
 [![Gem Version](https://badge.fury.io/rb/camaraderie.png)](https://rubygems.org/gems/camaraderie)
+[![Build Status](https://travis-ci.org/mirego/camaraderie.png?branch=master)](https://travis-ci.org/mirego/camaraderie)
 
 Camaraderie takes away the pain of managing membership stuff between users and organizations.
 
