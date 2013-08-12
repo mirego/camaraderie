@@ -48,4 +48,4 @@ module Camaraderie
   end
 end
 
-require 'camaraderie/railtie' if defined?(Rails) && Rails::VERSION::MAJOR >= 3
+ActiveRecord::Base.class_eval(&Camaraderie.inject_into_active_record)
