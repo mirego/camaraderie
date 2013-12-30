@@ -27,26 +27,26 @@ describe Camaraderie::Organization do
 
     describe :admins do
       subject { organization.admins }
-      it { should be_an_instance_of(relation_class(Membership)) }
+      it { should be_a_kind_of(ActiveRecord::Relation) }
       it { should have(1).item }
     end
 
     describe :members do
       subject { organization.members }
-      it { should be_an_instance_of(relation_class(Membership)) }
+      it { should be_a_kind_of(ActiveRecord::Relation) }
       it { should have(2).items }
     end
 
     describe :admin_users do
       subject { organization.admin_users }
-      it { should be_an_instance_of(relation_class(User)) }
+      it { should be_a_kind_of(ActiveRecord::Relation) }
       it { should have(1).item }
       it { should include user1 }
     end
 
     describe :member_users do
       subject { organization.member_users }
-      it { should be_an_instance_of(relation_class(User)) }
+      it { should be_a_kind_of(ActiveRecord::Relation) }
       it { should have(2).items }
       it { should include user2, user3 }
     end

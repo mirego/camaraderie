@@ -29,14 +29,14 @@ describe Camaraderie::Membership do
     describe :admins do
       subject { Membership.admins }
 
-      it { should be_an_instance_of(relation_class(Membership)) }
+      it { should be_a_kind_of(ActiveRecord::Relation) }
       it { should have(2).items }
     end
 
     describe :members do
       subject { Membership.members }
 
-      it { should be_an_instance_of(relation_class(Membership)) }
+      it { should be_a_kind_of(ActiveRecord::Relation) }
       it { should have(1).item }
     end
   end
