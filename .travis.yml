@@ -10,3 +10,11 @@ gemfile:
   - gemfiles/Gemfile.activerecord-3.2.x
 
 script: "echo 'DO IT' && bundle exec rake spec"
+
+notifications:
+  hipchat:
+    rooms:
+      secure: "ANg2hcbWOFDrX47AGOIlcNaZLBXePUmZJbNbXOShmw+CrmFLbSZXdvR4DiDots+UsRYfi/da8IFcOKbSpUhwkLnY37dInb/pwmDgVlvbRbAI/tqipxJoVB2IfP40GZKdGPe2hYV9oKUibNx3inD4YZx0Dl22fow6Xv6bKlW3zUA="
+    template:
+      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} (<a href="%{build_url}">Build</a>/<a href="%{compare_url}">Changes</a>)'
+    format: 'html'
